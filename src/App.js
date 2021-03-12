@@ -1,7 +1,12 @@
 import React from 'react';
+import Photos from './components/Photos';
 
 function App() {
-  return <div>Hello World</div>;
+  return (
+    <>
+      <Photos />
+    </>
+  );
 }
 
 export default App;
