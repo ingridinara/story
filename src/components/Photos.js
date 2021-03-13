@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { StyledRotateLeft } from './Photos.styles';
 const Photos = () => {
   const [photos, setPhotos] = useState([]);
 
@@ -16,25 +16,35 @@ const Photos = () => {
   });
 
   return (
-    <div>
-      {photos.map((photo) => (
+    <>
+      {photos.length > 0 ? (
         <div>
-          <div key={photo.id}>
-            <div>Title: {photo.title}</div>
-            <div>Album Id:{photo.albumId}</div>
-            {window.innerWidth > 1025 ? (
-              <div>
-                <img src={photo.url} alt={photo.title}></img>
+          {photos.map((photo) => (
+            <div>
+              <div key={photo.id}>
+                <div>Title: {photo.title}</div>
+                <div>Album Id:{photo.albumId}</div>
+                {window.innerWidth > 1025 ? (
+                  <div>
+                    <img src={photo.url} alt={photo.title}></img>
+                  </div>
+                ) : (
+                  <div>
+                    <img src={photo.thumbnailUrl} alt={photo.title}></img>
+                  </div>
+                )}
               </div>
-            ) : (
-              <div>
-                <img src={photo.thumbnailUrl} alt={photo.title}></img>
-              </div>
-            )}
-          </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      ) : (
+        <>
+          <StyledRotateLeft
+            style={{ fontSize: '300px', width: '100vw', height: '100vh' }}
+          ></StyledRotateLeft>
+        </>
+      )}{' '}
+    </>
   );
 };
 
