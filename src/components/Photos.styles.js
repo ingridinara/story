@@ -73,3 +73,14 @@ export const StyledImg = styled.img`
     }
   }
 `;
+export const StyledWapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+export const StyledImgDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;

@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { StyledRotateLeft, StyledImg } from './Photos.styles';
+import {
+  StyledRotateLeft,
+  StyledImg,
+  StyledWapper,
+  StyledImgDiv,
+} from './Photos.styles';
 const Photos = () => {
   const [photos, setPhotos] = useState([]);
   const [page, setPage] = useState(1);
@@ -42,15 +47,21 @@ const Photos = () => {
   return (
     <div>
       {photos.length > 0 ? (
-        <div
+        <StyledWapper
           onScroll={handleScroll}
           style={{ height: '90vh', overflowY: 'auto' }}
         >
           {photos.map((photo, index) => (
-            <div key={index}>
+            <StyledImgDiv key={index}>
               <div>
-                <div>Title: {photo.title}</div>
-                <div>Album Id:{photo.albumId}</div>
+                <p>
+                  <strong>Title:</strong> {photo.title}
+                </p>
+                <small>
+                  <strong>Album Id:</strong>
+                  {photo.albumId}
+                </small>
+
                 {window.innerWidth > 1025 ? (
                   <div>
                     <StyledImg
@@ -58,7 +69,9 @@ const Photos = () => {
                       src={photo.url}
                       alt={photo.title}
                     ></StyledImg>
-                    <div>Page Number: {page}</div>
+                    <small>
+                      <strong>Page Number:</strong> {page}
+                    </small>
                   </div>
                 ) : (
                   <div>
@@ -68,13 +81,13 @@ const Photos = () => {
                       src={photo.thumbnailUrl}
                       alt={photo.title}
                     ></img>
-                    <div>Page Number: {page}</div>
+                    <small>Page Number: {page}</small>
                   </div>
                 )}
               </div>
-            </div>
+            </StyledImgDiv>
           ))}
-        </div>
+        </StyledWapper>
       ) : (
         <div>
           <StyledRotateLeft
