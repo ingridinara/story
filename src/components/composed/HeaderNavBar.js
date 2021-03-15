@@ -5,7 +5,7 @@ const HeaderNavBar = () => {
   return (
     <StyledHeader>
       <Navbar expand="lg">
-        <Navbar.Brand href="/">Your React Photos App</Navbar.Brand>
+        <Navbar.Brand href="/">Your React Colorful Photos App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">

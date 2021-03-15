@@ -2,14 +2,15 @@ import styled from 'styled-components';
 
 export const StyledHeader = styled.div`
   .navbar {
-    background-color: #222;
+    background-color: #ccc;
+    font-weight: bold;
   }
 
   .navbar-brand,
   .navbar-nav .nav-link {
-    color: #bbb;
+    color: green;
   }
   &.hover {
-    color: #fff;
+    color: #bbb;
   }
 `;
