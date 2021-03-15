@@ -32,6 +32,13 @@ const Photos = () => {
     fetchData();
   }, [page]);
 
+  const handleClick = (index) => {
+    let newPhotosList = photos;
+    newPhotosList.splice([index], 1);
+    console.log(newPhotosList);
+    setPhotos([...newPhotosList]);
+  };
+
   return (
     <div>
       {photos.length > 0 ? (
@@ -39,19 +46,29 @@ const Photos = () => {
           onScroll={handleScroll}
           style={{ height: '90vh', overflowY: 'auto' }}
         >
-          {photos.map((photo) => (
-            <div key={photo.id}>
+          {photos.map((photo, index) => (
+            <div key={index}>
               <div>
                 <div>Title: {photo.title}</div>
                 <div>Album Id:{photo.albumId}</div>
                 {window.innerWidth > 1025 ? (
                   <div>
-                    <img src={photo.url} alt={photo.title}></img>
+                    <img
+                      style={{ display: 'flex' }}
+                      onClick={handleClick}
+                      src={photo.url}
+                      alt={photo.title}
+                    ></img>
                     <div>Page Number: {page}</div>
                   </div>
                 ) : (
                   <div>
-                    <img src={photo.thumbnailUrl} alt={photo.title}></img>
+                    <img
+                      style={{ display: 'flex' }}
+                      onClick={handleClick}
+                      src={photo.thumbnailUrl}
+                      alt={photo.title}
+                    ></img>
                     <div>Page Number: {page}</div>
                   </div>
                 )}
