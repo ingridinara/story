@@ -78,7 +78,7 @@ export const StyledWapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  height: auto;
+  height: 90vh;
   overflow-y: auto; // with hidden infinity scroll does not work
 `;
 export const StyledImgDiv = styled.div`
@@ -100,5 +100,3 @@ export const StyledText = styled.div`
   height: 9rem;
   padding-right: 3rem;
 `;
-
-
