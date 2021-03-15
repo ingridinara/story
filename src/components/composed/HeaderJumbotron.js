@@ -17,8 +17,8 @@ const HeaderJumbotron = () => {
           <StyledParagraphDiv>
             <p>If you click on a photo, it will disappear.</p>
             <p>
-              If your screen size get smaller than 1025px, you will get to see
-              small pictures.
+              If your screen size get smaller, you will get to see only two
+              small pictures at a row.
             </p>
             <p>We have an infinity scroll, so scrolling will never end.</p>
           </StyledParagraphDiv>
