@@ -5,6 +5,8 @@ import {
   StyledImg,
   StyledWapper,
   StyledImgDiv,
+  StyledInnerDiv,
+  StyledText,
 } from './Photos.styles';
 const Photos = () => {
   const [photos, setPhotos] = useState([]);
@@ -47,44 +49,29 @@ const Photos = () => {
   return (
     <div>
       {photos.length > 0 ? (
-        <StyledWapper
-          onScroll={handleScroll}
-          style={{ height: '90vh', overflowY: 'auto' }}
-        >
+        <StyledWapper onScroll={handleScroll}>
           {photos.map((photo, index) => (
             <StyledImgDiv key={index}>
-              <div>
-                <p>
+              <StyledInnerDiv>
+                <StyledText>
                   <strong>Title:</strong> {photo.title}
-                </p>
+                </StyledText>
                 <small>
                   <strong>Album Id:</strong>
                   {photo.albumId}
                 </small>
+                <div>
+                  <StyledImg
+                    onClick={handleClick}
+                    src={photo.thumbnailUrl}
+                    alt={photo.title}
+                  ></StyledImg>
 
-                {window.innerWidth > 1025 ? (
-                  <div>
-                    <StyledImg
-                      onClick={handleClick}
-                      src={photo.url}
-                      alt={photo.title}
-                    ></StyledImg>
-                    <small>
-                      <strong>Page Number:</strong> {page}
-                    </small>
-                  </div>
-                ) : (
-                  <div>
-                    <img
-                      style={{ display: 'flex' }}
-                      onClick={handleClick}
-                      src={photo.thumbnailUrl}
-                      alt={photo.title}
-                    ></img>
-                    <small>Page Number: {page}</small>
-                  </div>
-                )}
-              </div>
+                  <small>
+                    <strong>Page Number:</strong> {page}
+                  </small>
+                </div>
+              </StyledInnerDiv>
             </StyledImgDiv>
           ))}
         </StyledWapper>

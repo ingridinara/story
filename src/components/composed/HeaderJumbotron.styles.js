@@ -34,6 +34,7 @@ export const StyledParagraphDiv = styled.div`
   justify-content: center;
   align-items: center;
   padding-bottom: 1rem;
+  text-align: center;
 `;
 
 export const StyledSubTitle = styled.h4`

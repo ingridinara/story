@@ -77,10 +77,28 @@ export const StyledWapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  height: auto;
+  overflow-y: auto; // with hidden infinity scroll does not work
 `;
 export const StyledImgDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  flex: 4 2 30%;
 `;
+
+export const StyledInnerDiv = styled.div`
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+`;
+
+export const StyledText = styled.div`
+  text-align: justify;
+  height: 9rem;
+  padding-right: 3rem;
+`;
+
+
