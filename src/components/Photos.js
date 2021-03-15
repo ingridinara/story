@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { StyledRotateLeft } from './Photos.styles';
+import { StyledRotateLeft, StyledImg } from './Photos.styles';
 const Photos = () => {
   const [photos, setPhotos] = useState([]);
   const [page, setPage] = useState(1);
@@ -53,12 +53,11 @@ const Photos = () => {
                 <div>Album Id:{photo.albumId}</div>
                 {window.innerWidth > 1025 ? (
                   <div>
-                    <img
-                      style={{ display: 'flex' }}
+                    <StyledImg
                       onClick={handleClick}
                       src={photo.url}
                       alt={photo.title}
-                    ></img>
+                    ></StyledImg>
                     <div>Page Number: {page}</div>
                   </div>
                 ) : (
